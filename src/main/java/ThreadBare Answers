@@ -1,0 +1,17 @@
+ * How many times do you have to run ThreadTwoHashMapBroken before you get an exception?
+
+    An exception was created after the first run of the broken hashmap. The exception would
+    occasionally fail after two tries.
+
+* WHY does it continue and exit with a 0 even after the exception gets thrown?
+
+    The program continues to execute the remaining actions with ending all threads after the
+    exception is thrown. The program is attempting to create two hashmaps at the
+    same time and execute a start method inside of a run method. The following below was
+    commented out. The threads ran successfully afterwards.
+
+//        new Thread("Run of " + 8) {
+//            public void run() {
+//                tm.runMapOfSize(8);
+//            }
+//        }.start();
